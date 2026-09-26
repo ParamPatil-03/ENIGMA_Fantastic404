@@ -1,0 +1,30 @@
+{
+  "_meta": "Modeled demonstration data",
+  "data": {
+    "Aarti Industries Limited": {
+      "filed_hazard_categories": [
+        "corrosive",
+        "toxic"
+      ],
+      "filed_concentration_range": {
+        "min": 60,
+        "max": 68
+      },
+      "last_filing_update_date": "2025-06-01T00:00:00Z",
+      "rule9_status": "approved",
+      "prior_discrepancy_count": 0
+    },
+    "UPL Limited": {
+      "filed_hazard_categories": [
+        "corrosive"
+      ],
+      "filed_concentration_range": {
+        "min": 50,
+        "max": 55
+      },
+      "last_filing_update_date": "2025-01-01T00:00:00Z",
+      "rule9_status": "pending",
+      "prior_discrepancy_count": 2
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "hazardous": [
+    {
+      "document_type": "Rule 9 Utilization Approval",
+      "description": "Required when receiver uses waste as raw material.",
+      "required_for": "hazardous"
+    },
+    {
+      "document_type": "Form 10 Manifest",
+      "description": "Transport manifest.",
+      "required_for": "hazardous"
+    }
+  ],
+  "non_hazardous": [
+    {
+      "document_type": "CTO/CCA",
+      "description": "Consent to operate.",
+      "required_for": "both"
+    }
+  ]
+}

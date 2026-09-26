@@ -1,0 +1,21 @@
+{
+  "_meta": "Modeled demonstration data",
+  "data": [
+    {
+      "standardized_name": "Spent Sulfuric Acid",
+      "material_class": "acid_byproduct",
+      "cas_number": "7664-93-9",
+      "hazard_class": "corrosive",
+      "equivalent_virgin_material": "Commercial Grade Sulfuric Acid",
+      "location": "Dahej SEZ"
+    },
+    {
+      "standardized_name": "Phosphogypsum",
+      "material_class": "gypsum_byproduct",
+      "cas_number": "13397-24-5",
+      "hazard_class": "non_hazardous",
+      "equivalent_virgin_material": "Natural Gypsum",
+      "location": "Ankleshwar GIDC"
+    }
+  ]
+}

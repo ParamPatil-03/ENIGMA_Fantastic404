@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ankleshwar GIDC",
+    "latitude": 21.6264,
+    "longitude": 73.0152,
+    "assay_team_base": "Bharuch Central",
+    "avg_dispatch_hours": 1.5,
+    "active_cases_count": 0,
+    "verified_companies_count": 0
+  },
+  {
+    "name": "Dahej SEZ",
+    "latitude": 21.7118,
+    "longitude": 72.5855,
+    "assay_team_base": "Bharuch Central",
+    "avg_dispatch_hours": 2.1,
+    "active_cases_count": 0,
+    "verified_companies_count": 0
+  }
+]

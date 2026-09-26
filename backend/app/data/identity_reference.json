@@ -1,0 +1,47 @@
+[
+  {
+    "company_name": "Aarti Industries Limited",
+    "registry_type": "MCA",
+    "registration_number": "L24110GJ1984PLC007301",
+    "registered_address": "Plot No 801/23, GIDC Estate, Ankleshwar",
+    "status": "active",
+    "pincode": "393002",
+    "gidc_estate_match": true
+  },
+  {
+    "company_name": "Meghmani Organics Ltd",
+    "registry_type": "MCA",
+    "registration_number": "L24299GJ1995PLC024052",
+    "registered_address": "Plot No. Z/31/3, Dahej SEZ, Bharuch",
+    "status": "active",
+    "pincode": "392130",
+    "gidc_estate_match": true
+  },
+  {
+    "company_name": "UPL Limited",
+    "registry_type": "MCA",
+    "registration_number": "L24219GJ1985PLC025132",
+    "registered_address": "Plot No 117/118, GIDC, Ankleshwar",
+    "status": "active",
+    "pincode": "393002",
+    "gidc_estate_match": true
+  },
+  {
+    "company_name": "Atul Ltd",
+    "registry_type": "MCA",
+    "registration_number": "L99999GJ1975PLC002859",
+    "registered_address": "Atul, Valsad",
+    "status": "active",
+    "pincode": "396020",
+    "gidc_estate_match": false
+  },
+  {
+    "company_name": "Sajjan India Limited",
+    "registry_type": "MCA",
+    "registration_number": "U24230GJ1970PLC001712",
+    "registered_address": "Plot No 6115, GIDC, Ankleshwar",
+    "status": "active",
+    "pincode": "393002",
+    "gidc_estate_match": true
+  }
+]

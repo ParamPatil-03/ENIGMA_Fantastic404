@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Touchstone — Industrial By-Product Verification & Feedstock Exchange</title>
+  <meta name="description" content="Independent chemical verification and GPCB Rule-9 compliance platform for industrial corridors. Verify secondary feedstocks and by-products with molecular characterization before you trade.">
+
+  <!-- Typography: Clash Display, Outfit, Space Grotesk, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-carbon text-silver">
+
+  <!-- Standard Cursor Used -->
+
+  <!-- Noise Overlay for Cinematic Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Glow Blobs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Floating Minimalist Island Navigation -->
+  <header class="nav-island-wrapper" id="mainHeader">
+    <nav class="nav-island glass-pill">
+      <!-- Brand & Telemetry Group -->
+      <div class="nav-brand-group">
+        <a href="#" class="brand-minimal" data-cursor="HOME">
+          <span class="brand-text-minimal">TOUCH<span class="text-acid">STONE</span></span>
+        </a>
+        <div class="nav-status-pill font-mono">
+          <span class="live-dot pulse"></span>
+          <span class="status-count text-acid" id="navVerificationCount">247</span>
+          <span class="status-txt" id="navVerificationLabel">VERIFICATIONS LOGGED</span>
+        </div>
+      </div>
+
+      <!-- Clean Airy Nav Links -->
+      <div class="nav-menu">
+        <a href="#problem" class="nav-item" data-cursor="VIEW">The Gap</a>
+        <a href="#simulator" class="nav-item" data-cursor="CALC">Terminal</a>
+        <a href="#streams" class="nav-item" data-cursor="BROWSE">Case Library</a>
+        <a href="#compliance" class="nav-item" data-cursor="LEGAL">Checklist</a>
+      </div>
+      <!-- Action Endcap removed -->
+      <div class="nav-actions-minimal">
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-mesh-canvas-container">
+      <canvas id="networkCanvas"></canvas>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge animate-in">
+        <span class="badge-prefix">INDEPENDENT VERIFICATION</span>
+        <span class="badge-separator">•</span>
+        <span class="badge-highlight font-mono">GIDC & MIDC INDUSTRIAL CLUSTERS</span>
+      </div>
+
+      <h1 class="hero-headline animate-in">
+        TRUST THE FILINGS.<br>
+        <span class="text-acid stroke-acid">VERIFY THE CHEMISTRY.</span>
+      </h1>
+
+      <p class="hero-subtext animate-in">
+        Beyond rudimentary scrap collection. Touchstone provides batch-level chemical verification, GPCB Rule-9 reconciliation, and NABL assay validation turning complex industrial by-products into trusted raw material pipelines.
+      </p>
+
+      <div class="hero-cta-group animate-in">
+        <a href="#simulator" class="btn btn-acid btn-lg btn-magnetic" data-cursor="ENGINE">
+          <span>Try Field Terminal</span>
+          <i data-lucide="microscope" class="icon-md"></i>
+        </a>
+        <a href="#streams" class="btn btn-glass btn-lg btn-magnetic" data-cursor="FEEDSTOCKS">
+          <span>View Past Cases</span>
+          <i data-lucide="arrow-right" class="icon-md"></i>
+        </a>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="hero-metrics-grid animate-in">
+        <div class="metric-card glass-card">
+          <div class="metric-value font-mono">₹<span class="counter" data-target="34">0</span> <span class="text-acid">Cr</span></div>
+          <div class="metric-label">Losses Prevented for Clients</div>
+          <div class="metric-sub font-mono muted-tag">(illustrative, based on pilot data)</div>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="metric-value font-mono"><span class="counter" data-target="247">0</span></div>
+          <div class="metric-label">Verifications Completed</div>
+          <div class="metric-sub font-mono muted-tag">(illustrative, based on pilot data)</div>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="metric-value font-mono"><span class="counter" data-target="8.5">0</span><span class="text-acid">%</span></div>
+          <div class="metric-label">Discrepancy Detection Rate</div>
+          <div class="metric-sub font-mono muted-tag">(illustrative, based on pilot data)</div>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="metric-value font-mono"><span class="counter" data-target="12">0</span> <span class="text-acid">hrs</span></div>
+          <div class="metric-label">Average Turnaround Time</div>
+          <div class="metric-sub font-mono">For a document-level check</div>
+          <div class="metric-sub font-mono muted-tag">(illustrative, based on pilot data)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#problem" class="scroll-cue" aria-label="Scroll to content">
+      <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+      <span class="scroll-text font-mono">SCROLL TO EXAMINE</span>
+    </a>
+  </section>
+
+  <!-- Live Marquee Ticker -->
+  <section class="ticker-wrapper" aria-label="Live industrial stream ticker">
+    <div class="ticker-track">
+      <div class="ticker-content font-mono">
+        <span class="ticker-item"><i data-lucide="shield-check" class="text-acid"></i> VERIFIED: Spent H₂SO₄ 72% — Declared Assay Matches Filed GPCB Consent (Ankleshwar)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="alert-triangle" class="text-danger"></i> DISCREPANCY FLAGGED: Declared Concentration 74% vs Historical 60-68% — Assay Recommended (Vatva)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="file-warning" class="text-muted"></i> MISSING DOCUMENT: Rule 9 Approval Not on File — Facilitation Requested (Vapi)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="shield-check" class="text-acid"></i> VERIFIED: Phosphogypsum 98% Purity — NABL Lab Assay Confirmed (Dahej)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="alert-triangle" class="text-danger"></i> DISCREPANCY FLAGGED: Spent Caustic Free Alkalinity Variance — Shipment Paused (Jhagadia)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="file-warning" class="text-muted"></i> MISSING DOCUMENT: PESO Tanker Geofence Log Incomplete — Audit Triggered (Tarapur)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="shield-check" class="text-acid"></i> VERIFIED: Fly Ash Grade I — Moisture Content &lt;2%, Ready for Dispatch (Nandesari)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="alert-triangle" class="text-danger"></i> DISCREPANCY FLAGGED: Spent Toluene High Moisture — Distillation Plant Warned (Ankleshwar)</span>
+        <span class="ticker-separator">•</span>
+      </div>
+      <div class="ticker-content font-mono" aria-hidden="true">
+        <span class="ticker-item"><i data-lucide="shield-check" class="text-acid"></i> VERIFIED: Spent H₂SO₄ 72% — Declared Assay Matches Filed GPCB Consent (Ankleshwar)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="alert-triangle" class="text-danger"></i> DISCREPANCY FLAGGED: Declared Concentration 74% vs Historical 60-68% — Assay Recommended (Vatva)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="file-warning" class="text-muted"></i> MISSING DOCUMENT: Rule 9 Approval Not on File — Facilitation Requested (Vapi)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="shield-check" class="text-acid"></i> VERIFIED: Phosphogypsum 98% Purity — NABL Lab Assay Confirmed (Dahej)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="alert-triangle" class="text-danger"></i> DISCREPANCY FLAGGED: Spent Caustic Free Alkalinity Variance — Shipment Paused (Jhagadia)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="file-warning" class="text-muted"></i> MISSING DOCUMENT: PESO Tanker Geofence Log Incomplete — Audit Triggered (Tarapur)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="shield-check" class="text-acid"></i> VERIFIED: Fly Ash Grade I — Moisture Content &lt;2%, Ready for Dispatch (Nandesari)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item"><i data-lucide="alert-triangle" class="text-danger"></i> DISCREPANCY FLAGGED: Spent Toluene High Moisture — Distillation Plant Warned (Ankleshwar)</span>
+        <span class="ticker-separator">•</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Touchstone Works (4-Step Process Strip) -->
+  <section class="section process-section" id="how-it-works">
+    <div class="container">
+      <div class="section-tag font-mono text-acid">[ VERIFICATION PROTOCOL ]</div>
+      <h2 class="section-title">HOW TOUCHSTONE WORKS</h2>
+      
+      <div class="compliance-flow-grid" style="margin-top: 2rem;">
+        <!-- Step 1 -->
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">01</div>
+          <div class="comp-icon"><i data-lucide="file-input"></i></div>
+          <h4 class="comp-heading">Submit the Claim</h4>
+          <p class="comp-desc">The buyer or seller submits the declared material specification, transaction volume, and basic logistical details for the pending trade.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">02</div>
+          <div class="comp-icon"><i data-lucide="scan-search"></i></div>
+          <h4 class="comp-heading">Document Cross-Check</h4>
+          <p class="comp-desc">Touchstone compares the declared spec against the seller's filed regulatory profile (CTO, Form-4) and produces a Verification Confidence Score within hours.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">03</div>
+          <div class="comp-icon"><i data-lucide="flask-conical"></i></div>
+          <h4 class="comp-heading">Physical Assay if Flagged</h4>
+          <p class="comp-desc">If the confidence score falls below threshold, or the client explicitly requests it, a Touchstone field team is dispatched to independently test the actual material on-site.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">04</div>
+          <div class="comp-icon"><i data-lucide="file-check-2"></i></div>
+          <h4 class="comp-heading">Certified Report + Support</h4>
+          <p class="comp-desc">The client receives a verification certificate. If any required legal documentation (Rule 9, manifests) is missing or expired, we separately offer to help obtain it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement & Paradigm Comparison -->
+  <section class="section problem-section" id="problem">
+    <div class="container">
+      <div class="section-tag font-mono text-acid">[ PARADIGM RE-ENGINEERING ]</div>
+      <h2 class="section-title">UNVERIFIED TRADE VS.<br><span class="text-acid">TOUCHSTONE-VERIFIED TRADE</span></h2>
+      <p class="section-lead">
+        Traditional aggregators handle dry paper and plastic flakes. Gujarat’s real industrial challenge lies in chemical by-products: high COD effluents, spent pickling liquors, filter cakes, and spent solvents that cost millions to neutralize or incinerate.
+      </p>
+
+      <div class="comparison-grid">
+        <!-- The Legacy Linear Model -->
+        <div class="comparison-card legacy-card glass-card">
+          <div class="card-status-badge status-danger font-mono">HIGH RISK</div>
+          <h3 class="comparison-head">Unverified Trade</h3>
+          <ul class="comparison-list">
+            <li>
+              <div class="list-icon danger-icon"><i data-lucide="x"></i></div>
+              <div>
+                <strong>Blind Transactions:</strong> No independent quality check or chemical assay verification before material is moved.
+              </div>
+            </li>
+            <li>
+              <div class="list-icon danger-icon"><i data-lucide="x"></i></div>
+              <div>
+                <strong>Off-Spec Vulnerability:</strong> High risk of receiving contaminated or entirely out-of-specification chemical material.
+              </div>
+            </li>
+            <li>
+              <div class="list-icon danger-icon"><i data-lucide="x"></i></div>
+              <div>
+                <strong>Compliance Exposure:</strong> Potential for illegal trade due to missing or forged GPCB Rule-9 authorizations.
+              </div>
+            </li>
+            <li>
+              <div class="list-icon danger-icon"><i data-lucide="x"></i></div>
+              <div>
+                <strong>Post-Delivery Shock:</strong> Severe financial damage when a bad batch is discovered only after unloading into tanks.
+              </div>
+            </li>
+          </ul>
+          <div class="card-footer-metric">
+            <span class="text-muted">Estimated Loss (Illustrative):</span>
+            <span class="text-danger font-mono font-bold">-₹4.2 Lakhs / Bad Batch</span>
+          </div>
+        </div>
+
+        <!-- The Touchstone Verified Model -->
+        <div class="comparison-card symbio-card glass-card border-acid-glow">
+          <div class="card-status-badge status-acid font-mono">SECURE PIPELINE</div>
+          <h3 class="comparison-head">Touchstone-Verified Trade</h3>
+          <ul class="comparison-list">
+            <li>
+              <div class="list-icon acid-icon"><i data-lucide="check"></i></div>
+              <div>
+                <strong>Pre-Payment Validation:</strong> Comprehensive document cross-check completed before any payment is authorized.
+              </div>
+            </li>
+            <li>
+              <div class="list-icon acid-icon"><i data-lucide="check"></i></div>
+              <div>
+                <strong>Scientific Certainty:</strong> Independent physical assay and sample collection dispatched immediately when discrepancies arise.
+              </div>
+            </li>
+            <li>
+              <div class="list-icon acid-icon"><i data-lucide="check"></i></div>
+              <div>
+                <strong>Regulatory Airtightness:</strong> All required legal documentation (Rule-9, manifests, CTE/CCA) confirmed present or in progress.
+              </div>
+            </li>
+            <li>
+              <div class="list-icon acid-icon"><i data-lucide="check"></i></div>
+              <div>
+                <strong>High ROI Protection:</strong> A modest per-tonne verification fee eliminates the massive downside risk of contaminated deliveries.
+              </div>
+            </li>
+          </ul>
+          <div class="card-footer-metric">
+            <span class="text-muted">Net Verification Cost vs Loss:</span>
+            <span class="text-acid font-mono font-bold">₹750 Fee Prevents ₹4.2L Loss</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Gap We Close (Editorial Case Summary) -->
+  <section class="section editorial-section" id="case-study" style="background: rgba(0,0,0,0.2); padding: 5rem 0;">
+    <div class="container">
+      <div class="section-tag font-mono text-muted">[ THE GAP WE CLOSE ]</div>
+      
+      <div class="editorial-card glass-card border-acid-glow" style="margin-top: 2rem; padding: 4rem 3rem; max-width: 900px; margin-left: auto; margin-right: auto; position: relative;">
+        <!-- Quote mark decorative -->
+        <div class="quote-mark" style="position: absolute; top: 1rem; left: 1rem; font-size: 8rem; line-height: 1; color: rgba(214, 223, 36, 0.05); font-family: 'Syne', sans-serif;">&ldquo;</div>
+        
+        <div style="position: relative; z-index: 2;">
+          <h3 class="font-syne text-3xl mb-5" style="text-transform: uppercase;">The Taloja Precedent</h3>
+          
+          <p class="text-lg text-silver mb-5" style="line-height: 1.7; font-family: 'Space Grotesk', sans-serif;">
+            In a prominent matter before the National Green Tribunal involving manufacturers in the Taloja MIDC cluster, industrial chemical by-products were transferred onward while a core regulatory question remained unanswered: did the material's actual characteristics match what the generator had formally declared in their environmental consents?
+          </p>
+          <p class="text-lg text-silver mb-8" style="line-height: 1.7; font-family: 'Space Grotesk', sans-serif;">
+            The dispute highlighted a systemic vulnerability across industrial corridors — registered facility filings often drift severely from daily operational reality, leaving downstream buyers legally exposed. <strong class="text-white">This is exactly the gap our document cross-check is built to catch — before it becomes a Tribunal case, not after.</strong>
+          </p>
+          
+          <div class="font-mono text-xs text-muted" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+            Source: National Green Tribunal proceedings, publicly available.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 7-Factor Matching Engine & Chemistry Verification Simulator -->
+  <section class="section engine-section" id="simulator">
+    <div class="container">
+      <div class="section-tag font-mono text-acid">[ INTERNAL FIELD-ASSAY TERMINAL ]</div>
+      <h2 class="section-title">TOUCHSTONE SCIENTIST<br><span class="text-acid">VERIFICATION SANDBOX</span></h2>
+      <p class="section-lead">
+        When declared data deviates from government filings, a Touchstone field scientist is dispatched. Below is a simulation of the internal terminal our assay teams use to log physical samples and determine discrepancy risk.
+      </p>
+
+      <div class="simulator-wrapper glass-card">
+        <div class="simulator-controls">
+          <div class="control-header">
+            <span class="font-mono text-acid">01 // SELECT CASE TO ASSAY</span>
+            <span class="live-pulse-badge">REAL-TIME DATA AUDIT</span>
+          </div>
+
+          <!-- Case Selector Dropdown -->
+          <div style="margin-bottom: 1.5rem;">
+            <select id="caseSelector" class="custom-select font-mono text-sm" style="width: 100%; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: #fff; padding: 0.75rem; border-radius: 4px; outline: none; cursor: pointer;">
+              <option value="spent-h2so4">Spent Sulfuric Acid (Ankleshwar GIDC) - Flagged</option>
+              <option value="phosphogypsum">Phosphogypsum (Dahej PCPIR) - Flagged</option>
+              <option value="spent-toluene">Spent Toluene (Vapi Industrial) - Doc Gap</option>
+              <option value="flyash-f">Class-F Fly Ash (Jhagadia GIDC) - Auto-Matched</option>
+              <option value="spent-caustic">Spent Caustic Soda (Vatva Industrial) - Verified</option>
+              <option value="ggbs-slag">GGBS Slag (Hazira Corridor) - Doc Gap</option>
+              <option value="new-case" style="color: #2ed573; font-weight: bold;">+ Register New Assay Case</option>
+            </select>
+          </div>
+
+          <!-- Terminal Data Entry -->
+          <div class="sliders-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+            
+            <div class="input-group">
+              <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Company Name</label>
+              <input type="text" class="terminal-input" value="Dahej Gypsum Processing Co" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+            </div>
+            <div class="input-group">
+              <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Standardized Name</label>
+              <input type="text" class="terminal-input" value="Phosphogypsum" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+            </div>
+
+            <div class="input-group">
+              <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Material Class</label>
+              <input type="text" class="terminal-input" value="gypsum_byproduct" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+            </div>
+            <div class="input-group">
+              <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">CAS Number</label>
+              <input type="text" class="terminal-input" value="13397-24-5" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+            </div>
+
+            <div class="input-group">
+              <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Hazard Class</label>
+              <select class="terminal-input" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;">
+                <option selected>non_hazardous</option>
+                <option>hazardous</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Physical State</label>
+              <select class="terminal-input" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;">
+                <option selected>solid</option>
+                <option>liquid</option>
+                <option>sludge</option>
+              </select>
+            </div>
+
+            <div class="input-group" style="display: flex; gap: 0.5rem;">
+              <div style="flex: 2;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Quantity</label>
+                <input type="number" class="terminal-input" value="900" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Unit</label>
+                <select class="terminal-input" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;">
+                  <option selected>MT-M</option>
+                  <option>KG</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group" style="display: flex; gap: 0.5rem;">
+              <div style="flex: 1;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Purity % <span style="color:#666;font-size:0.7rem;">(BIS threshold: ≥85%)</span></label>
+                <input type="number" id="term-purity" class="terminal-input" value="92" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Moisture % Max <span style="color:#666;font-size:0.7rem;">(threshold: ≤15%)</span></label>
+                <input type="number" id="term-moisture" class="terminal-input" value="15" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+              </div>
+            </div>
+
+            <div class="input-group" style="display: flex; gap: 0.5rem;">
+              <div style="flex: 1;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">pH Level <span style="color:#666;font-size:0.7rem;">(GPCB: 6.5–8.5)</span></label>
+                <input type="number" id="term-ph" class="terminal-input" value="7.2" min="0" max="14" step="0.1" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Heavy Metals (ppm) <span style="color:#666;font-size:0.7rem;">(HW Rules 2016: ≤5ppm)</span></label>
+                <input type="number" id="term-heavymetals" class="terminal-input" value="2.1" min="0" step="0.1" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+              </div>
+            </div>
+
+            <div class="input-group" style="display: flex; gap: 0.5rem;">
+              <div style="flex: 1;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Suspended Solids (mg/L) <span style="color:#666;font-size:0.7rem;">(IS std: ≤100 mg/L)</span></label>
+                <input type="number" id="term-ss" class="terminal-input" value="45" min="0" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Batch Variability</label>
+                <select id="term-variability" class="terminal-input" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;">
+                  <option selected>low</option>
+                  <option>medium</option>
+                  <option>high</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label class="font-mono text-xs text-muted" style="display:block; margin-bottom: 0.25rem;">Consent Status <span style="color:#666;font-size:0.7rem;">(Compliance Flag only)</span></label>
+              <select id="term-consent" class="terminal-input" style="width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; outline: none; border-radius: 2px;">
+                <option selected>declared_byproduct_for_sale</option>
+                <option>unauthorized_waste</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="simulator-actions" style="display: flex; gap: 1rem;">
+            <button class="btn btn-acid" id="recalculateBtn" style="flex: 1;">
+              <span>Recalculate Risk</span>
+              <i data-lucide="refresh-cw" class="icon-sm"></i>
+            </button>
+            <button class="btn" id="updateLibraryBtn" style="flex: 1; background: transparent; border: 1px solid var(--text-acid); color: var(--text-acid); font-family: 'Space Mono', monospace; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 2px; transition: all 0.3s;">
+              <span>Update Library</span>
+              <i data-lucide="save" class="icon-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Output Radar & Breakdown Panel -->
+        <!-- Output Panel -->
+        <div class="simulator-output">
+          <div class="output-header" style="justify-content: space-between; display: flex; align-items: flex-end; margin-bottom: 1.5rem;">
+            <div class="output-title font-mono text-silver" style="font-size: 1.2rem; letter-spacing: 1px;">MARKETABILITY SCORE</div>
+            <div style="display: flex; gap: 1rem; align-items: flex-end;">
+              <div class="composite-score-wrap" style="margin-right: 0;">
+                <span class="composite-score text-acid font-mono" id="compositeScore">84.2</span>
+                <span class="score-den font-mono">%</span>
+              </div>
+              <div id="gradeScore" class="font-mono" style="font-size: 2.2rem; color: #fff; font-weight: bold; padding: 0.2rem 1rem; border: 2px solid var(--text-acid); border-radius: 4px; line-height: 1;">B+</div>
+            </div>
+          </div>
+
+          <div class="compatibility-meter-bar">
+            <div class="meter-fill" id="meterFill" style="width: 84.2%;"></div>
+          </div>
+
+          <!-- Factor Breakdown Grid -->
+          <div class="factors-grid" style="grid-template-columns: 1fr 1fr; display: grid; gap: 1.5rem; margin-top: 2.5rem;">
+            <div class="factor-item" style="margin-bottom: 0;">
+              <div class="factor-label-row">
+                <span class="factor-name">Purity vs BIS Threshold</span>
+                <span id="out-comp-txt" class="factor-val font-mono">88%</span>
+              </div>
+              <div class="mini-bar"><div id="out-comp-bar" class="mini-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="factor-item" style="margin-bottom: 0;">
+              <div class="factor-label-row">
+                <span class="factor-name">Moisture Compliance</span>
+                <span id="out-cons-txt" class="factor-val font-mono">90%</span>
+              </div>
+              <div class="mini-bar"><div id="out-cons-bar" class="mini-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="factor-item" style="margin-bottom: 0;">
+              <div class="factor-label-row">
+                <span class="factor-name">pH Range (GPCB 6.5–8.5)</span>
+                <span id="out-cont-txt" class="factor-val font-mono">85%</span>
+              </div>
+              <div class="mini-bar"><div id="out-cont-bar" class="mini-fill" style="width: 85%;"></div></div>
+            </div>
+            <div class="factor-item" style="margin-bottom: 0;">
+              <div class="factor-label-row">
+                <span class="factor-name">Heavy Metals (HW Rules 2016)</span>
+                <span id="out-reg-txt" class="factor-val font-mono text-acid">100%</span>
+              </div>
+              <div class="mini-bar"><div id="out-reg-bar" class="mini-fill" style="width: 100%;"></div></div>
+            </div>
+            <div class="factor-item" style="margin-bottom: 0;">
+              <div class="factor-label-row">
+                <span class="factor-name">Suspended Solids (IS Std)</span>
+                <span id="out-log-txt" class="factor-val font-mono">80%</span>
+              </div>
+              <div class="mini-bar"><div id="out-log-bar" class="mini-fill" style="width: 80%;"></div></div>
+            </div>
+            <div class="factor-item" style="margin-bottom: 0;">
+              <div class="factor-label-row">
+                <span class="factor-name">Batch Consistency</span>
+                <span id="out-econ-txt" class="factor-val font-mono">90%</span>
+              </div>
+              <div class="mini-bar"><div id="out-econ-bar" class="mini-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <div id="out-compliance-box" style="margin-top: 2rem; background: rgba(46, 213, 115, 0.1); border: 1px solid rgba(46, 213, 115, 0.3); padding: 1.25rem; border-radius: 6px; display: flex; gap: 1rem; align-items: flex-start;">
+             <i id="out-compliance-icon" data-lucide="shield-check" style="color: #2ed573;"></i>
+             <div>
+                <strong id="out-compliance-title" class="font-mono text-acid" style="display: block; margin-bottom: 0.5rem; letter-spacing: 0.5px;">COMPLIANCE FLAG: PASS</strong>
+                <p id="out-compliance-desc" class="font-mono text-sm" style="color: var(--text-silver); margin: 0;">Consent to Operate explicitly authorizes this material as a sellable byproduct.</p>
+             </div>
+          </div>
+
+          <div class="projection-banner" style="display: block; margin-top: 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); padding: 1.25rem;">
+            <div class="projection-col" style="width: 100%;">
+              <div id="out-improvement-title" class="proj-label font-mono">IMPROVEMENT ACTIONS (WEAKEST FACTOR: ECONOMIC VIABILITY)</div>
+              <ul id="out-improvement-list" class="text-silver font-mono" style="font-size: 0.85rem; line-height: 1.6; padding-left: 1.2rem; margin-top: 0.75rem; list-style-type: square; opacity: 0.9;">
+                <li style="margin-bottom: 0.5rem;">Moisture is 15% vs. the 10% spec buyers typically require — pre-drying would remove your only mandatory pretreatment step and could push this to Grade A.</li>
+                <li>Price is 60% of virgin gypsum cost — narrowing this further increases buyer interest but isn't a compliance issue.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="projection-banner" style="display: block; margin-top: 1rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); padding: 1.25rem;">
+            <div class="projection-col" style="width: 100%;">
+              <div class="proj-label font-mono">LIKELY INDUSTRY FIT</div>
+              <ul id="out-industry-list" class="text-acid font-mono" style="font-size: 0.85rem; line-height: 1.6; padding-left: 1.2rem; margin-top: 0.75rem; list-style-type: square;">
+                <li style="margin-bottom: 0.5rem;">Cement manufacturing (retarder substitute for natural gypsum)</li>
+                <li>Gypsum board / plasterboard production</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification Case Library -->
+  <section class="section streams-section" id="streams">
+    <div class="container">
+      <div class="streams-header-row">
+        <div>
+          <div class="section-tag font-mono text-acid">[ ANONYMIZED PAST CASES ]</div>
+          <h2 class="section-title">VERIFICATION CASE LIBRARY</h2>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-chips" id="streamFilters">
+          <button class="chip-btn active" data-filter="all">All Cases</button>
+          <button class="chip-btn" data-filter="verified">Verified by Scientist</button>
+          <button class="chip-btn" data-filter="rejected">Rejected by Scientist</button>
+          <button class="chip-btn" data-filter="auto">Not Tested (Auto-Matched)</button>
+        </div>
+      </div>
+
+      <!-- Marketplace Cards Grid -->
+      <div class="marketplace-grid" id="marketplaceGrid">
+        
+        <!-- Case Card 1 -->
+        <div class="stream-card glass-card" data-category="rejected">
+          <div class="stream-card-top">
+            <span class="hazchem-badge hazchem-corrosive font-mono">HAZCHEM CLASS 8 (CORROSIVE)</span>
+            <span class="cluster-pill font-mono">ANKLESHWAR GIDC</span>
+          </div>
+          <div class="stream-entity-title">Spent Sulfuric Acid (H₂SO₄)</div>
+          <div class="stream-specs font-mono">
+            <div class="spec-row">
+              <span>Verification Outcome:</span>
+              <strong class="text-danger">Rejected by Scientist</strong>
+            </div>
+            <div class="spec-row">
+              <span>Declared Concentration:</span>
+              <span>74.5%</span>
+            </div>
+            <div class="spec-row">
+              <span>Filed Historical Range:</span>
+              <span>60.0% - 68.0%</span>
+            </div>
+            <div class="spec-row">
+              <span>GPCB Authorization:</span>
+              <span class="text-acid"><i data-lucide="shield-check" class="icon-xs inline-icon"></i> Rule-9 Approved</span>
+            </div>
+          </div>
+          <div class="target-recipients">
+            <span class="target-title font-mono text-muted">VERIFICATION SUMMARY:</span>
+            <p class="target-desc">Declared purity fell significantly outside the generator's historically filed range. Touchstone scientist dispatched. Found elevated heavy metal contamination.</p>
+          </div>
+          <div class="stream-card-footer">
+            <button class="btn btn-acid-sm btn-magnetic open-modal-btn w-full" data-stream-name="Spent Sulfuric Acid Case" data-origin="Ankleshwar GIDC">
+              <span>View Verification Report</span>
+              <i data-lucide="file-check" class="icon-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Case Card 2 -->
+        <div class="stream-card glass-card" data-category="rejected">
+          <div class="stream-card-top">
+            <span class="hazchem-badge hazchem-nonhaz font-mono">NON-HAZARDOUS MINERAL</span>
+            <span class="cluster-pill font-mono">DAHEJ PCPIR</span>
+          </div>
+          <div class="stream-entity-title">Phosphogypsum</div>
+          <div class="stream-specs font-mono">
+            <div class="spec-row">
+              <span>Verification Outcome:</span>
+              <strong class="text-danger">Rejected by Scientist</strong>
+            </div>
+            <div class="spec-row">
+              <span>Declared Moisture:</span>
+              <span>45% (Wet Slurry)</span>
+            </div>
+            <div class="spec-row">
+              <span>Filed Operations:</span>
+              <span>Dry-Process Only</span>
+            </div>
+            <div class="spec-row">
+              <span>GPCB Authorization:</span>
+              <span class="text-acid"><i data-lucide="shield-check" class="icon-xs inline-icon"></i> Validated</span>
+            </div>
+          </div>
+          <div class="target-recipients">
+            <span class="target-title font-mono text-muted">VERIFICATION SUMMARY:</span>
+            <p class="target-desc">Generator declared 45% moisture content despite regulatory filings stating dry-process only. Dispatched scientist confirmed illegal wet-scrubber bypass.</p>
+          </div>
+          <div class="stream-card-footer">
+            <button class="btn btn-acid-sm btn-magnetic open-modal-btn w-full" data-stream-name="Phosphogypsum Case" data-origin="Dahej PCPIR">
+              <span>View Verification Report</span>
+              <i data-lucide="file-check" class="icon-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Case Card 3 -->
+        <div class="stream-card glass-card" data-category="auto">
+          <div class="stream-card-top">
+            <span class="hazchem-badge hazchem-flammable font-mono">HAZCHEM CLASS 3 (FLAMMABLE)</span>
+            <span class="cluster-pill font-mono">VAPI INDUSTRIAL ESTATE</span>
+          </div>
+          <div class="stream-entity-title">Spent Toluene</div>
+          <div class="stream-specs font-mono">
+            <div class="spec-row">
+              <span>Verification Outcome:</span>
+              <strong class="text-muted">Not Tested (Doc Gap)</strong>
+            </div>
+            <div class="spec-row">
+              <span>Declared Purity:</span>
+              <span>91.8%</span>
+            </div>
+            <div class="spec-row">
+              <span>Filed Consent Status:</span>
+              <span class="text-danger">Expired 8 Months Ago</span>
+            </div>
+            <div class="spec-row">
+              <span>Data Match:</span>
+              <span class="text-acid">Purity Matches Declaration</span>
+            </div>
+          </div>
+          <div class="target-recipients">
+            <span class="target-title font-mono text-muted">VERIFICATION SUMMARY:</span>
+            <p class="target-desc">Data matched perfectly, so no physical assay was required. However, generator's operating consent (CCA) expired 8 months ago. Trade blocked pending renewal.</p>
+          </div>
+          <div class="stream-card-footer">
+            <button class="btn btn-acid-sm btn-magnetic open-modal-btn w-full" data-stream-name="Spent Toluene Case" data-origin="Vapi GIDC">
+              <span>View Verification Report</span>
+              <i data-lucide="file-check" class="icon-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Case Card 4 -->
+        <div class="stream-card glass-card" data-category="auto">
+          <div class="stream-card-top">
+            <span class="hazchem-badge hazchem-nonhaz font-mono">POZZOLANIC COGNATE</span>
+            <span class="cluster-pill font-mono">JHAGADIA GIDC</span>
+          </div>
+          <div class="stream-entity-title">Class-F Fly Ash</div>
+          <div class="stream-specs font-mono">
+            <div class="spec-row">
+              <span>Verification Outcome:</span>
+              <strong class="text-muted">Not Tested (Auto-Matched)</strong>
+            </div>
+            <div class="spec-row">
+              <span>Declared Specs:</span>
+              <span>LOI &lt; 2.1%</span>
+            </div>
+            <div class="spec-row">
+              <span>Filed Range:</span>
+              <span>LOI 1.8% - 2.5%</span>
+            </div>
+            <div class="spec-row">
+              <span>Document Check:</span>
+              <span class="text-acid">100% Validated</span>
+            </div>
+          </div>
+          <div class="target-recipients">
+            <span class="target-title font-mono text-muted">VERIFICATION SUMMARY:</span>
+            <p class="target-desc">Flawless remote verification. Declared specifications, historical filed ranges, and live documentation cross-checks matched perfectly. No field test required.</p>
+          </div>
+          <div class="stream-card-footer">
+            <button class="btn btn-acid-sm btn-magnetic open-modal-btn w-full" data-stream-name="Fly Ash Case" data-origin="Jhagadia GIDC">
+              <span>View Verification Report</span>
+              <i data-lucide="file-check" class="icon-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Case Card 5 -->
+        <div class="stream-card glass-card" data-category="verified">
+          <div class="stream-card-top">
+            <span class="hazchem-badge hazchem-corrosive font-mono">HAZCHEM CLASS 8 (ALKALINE)</span>
+            <span class="cluster-pill font-mono">VATVA INDUSTRIAL ESTATE</span>
+          </div>
+          <div class="stream-entity-title">Spent Caustic Soda Lye</div>
+          <div class="stream-specs font-mono">
+            <div class="spec-row">
+              <span>Verification Outcome:</span>
+              <strong class="text-acid">Verified by Scientist</strong>
+            </div>
+            <div class="spec-row">
+              <span>Active Alkalinity:</span>
+              <span>28.5% NaOH</span>
+            </div>
+            <div class="spec-row">
+              <span>Historical Range:</span>
+              <span>27% - 30% NaOH</span>
+            </div>
+            <div class="spec-row">
+              <span>Transport Geofence:</span>
+              <span class="text-acid">Live Tracking Active</span>
+            </div>
+          </div>
+          <div class="target-recipients">
+            <span class="target-title font-mono text-muted">VERIFICATION SUMMARY:</span>
+            <p class="target-desc">Minor discrepancy in active alkalinity triggered a field visit. Scientist confirmed the scrubber blowdown was within acceptable operational variance. Verified safe for dispatch.</p>
+          </div>
+          <div class="stream-card-footer">
+            <button class="btn btn-acid-sm btn-magnetic open-modal-btn w-full" data-stream-name="Spent Caustic Case" data-origin="Vatva GIDC">
+              <span>View Verification Report</span>
+              <i data-lucide="file-check" class="icon-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Case Card 6 -->
+        <div class="stream-card glass-card" data-category="auto">
+          <div class="stream-card-top">
+            <span class="hazchem-badge hazchem-nonhaz font-mono">METALLURGICAL COGNATE</span>
+            <span class="cluster-pill font-mono">HAZIRA CORRIDOR</span>
+          </div>
+          <div class="stream-entity-title">GGBS Slag</div>
+          <div class="stream-specs font-mono">
+            <div class="spec-row">
+              <span>Verification Outcome:</span>
+              <strong class="text-muted">Not Tested (Doc Gap)</strong>
+            </div>
+            <div class="spec-row">
+              <span>Declared Specs:</span>
+              <span>94.0% Amorphous Glass</span>
+            </div>
+            <div class="spec-row">
+              <span>Filed Record:</span>
+              <span class="text-acid">Matches Declaration</span>
+            </div>
+            <div class="spec-row">
+              <span>Manifest Error:</span>
+              <span class="text-danger">Missing Receiver Consent</span>
+            </div>
+          </div>
+          <div class="target-recipients">
+            <span class="target-title font-mono text-muted">VERIFICATION SUMMARY:</span>
+            <p class="target-desc">Material chemistry matched declarations. No field test needed. However, the designated receiver's consent was revoked by GPCB last week. Touchstone blocked dispatch.</p>
+          </div>
+          <div class="stream-card-footer">
+            <button class="btn btn-acid-sm btn-magnetic open-modal-btn w-full" data-stream-name="GGBS Slag Case" data-origin="Hazira Corridor">
+              <span>View Verification Report</span>
+              <i data-lucide="file-check" class="icon-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Regulatory Compliance & Rule-9 Architecture -->
+  <section class="section compliance-section" id="compliance">
+    <div class="container">
+      <div class="section-tag font-mono text-acid">[ STATUTORY IMMUNITY & COMPLIANCE ]</div>
+      <h2 class="section-title">INTEGRATED GPCB XGN ARCHITECTURE &<br><span class="text-acid">HAZARDOUS WASTE RULE-9 AUTOMATION</span></h2>
+      <p class="section-lead">
+        Industrial symbiosis fails if it risks environmental sanctions. Touchstone embeds the Hazardous and Other Wastes (Management and Transboundary Movement) Rules directly into code.
+      </p>
+
+      <div class="compliance-flow-grid">
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">01</div>
+          <div class="comp-icon"><i data-lucide="fingerprint"></i></div>
+          <h4 class="comp-heading">Molecular Characterization</h4>
+          <span class="status-tag font-mono text-xs text-acid" style="display:inline-block; border:1px solid var(--text-acid); padding:2px 6px; border-radius:4px; margin-bottom:10px;">Automated in this build</span>
+          <p class="comp-desc">NABL-accredited 3rd-party laboratory assay verification with cryptographically signed Certificate of Analysis (CoA) matching input tolerances.</p>
+        </div>
+
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">02</div>
+          <div class="comp-icon"><i data-lucide="shield-alert"></i></div>
+          <h4 class="comp-heading">GPCB Rule-9 Authorization</h4>
+          <span class="status-tag font-mono text-xs text-muted" style="display:inline-block; border:1px solid var(--text-muted); padding:2px 6px; border-radius:4px; margin-bottom:10px;">Simulated for demo</span>
+          <p class="comp-desc">Automated matching against valid Gujarat Pollution Control Board Standard Operating Procedures (SOPs) for resource recovery utilization.</p>
+        </div>
+
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">03</div>
+          <div class="comp-icon"><i data-lucide="map-pin"></i></div>
+          <h4 class="comp-heading">Geofenced GPS Consignment</h4>
+          <span class="status-tag font-mono text-xs text-muted" style="display:inline-block; border:1px solid var(--text-muted); padding:2px 6px; border-radius:4px; margin-bottom:10px;">Simulated for demo</span>
+          <p class="comp-desc">Real-time GPS telematics with IoT digital seals ensuring tankers cannot discharge along transit corridors or divert to unauthorized dumps.</p>
+        </div>
+
+        <div class="comp-step-card glass-card">
+          <div class="step-num font-mono text-acid">04</div>
+          <div class="comp-icon"><i data-lucide="file-text"></i></div>
+          <h4 class="comp-heading">Digital Manifest Passbook</h4>
+          <span class="status-tag font-mono text-xs text-silver" style="display:inline-block; border:1px solid rgba(255,255,255,0.4); padding:2px 6px; border-radius:4px; margin-bottom:10px;">Facilitated by our team</span>
+          <p class="comp-desc">Dual-key digital XGN manifest reconciliation confirming physical receipt, mass balance conservation, and instant statutory ledger closure.</p>
+        </div>
+      </div>
+
+      <div class="interactive-checklist-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="checklist-header-row" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h3 class="text-xl mb-1">INTERACTIVE LEGAL DOCUMENT CHECKLIST</h3>
+            <p class="font-mono text-xs text-muted" style="max-width: 600px;">Document verification and facilitation are offered as separate services — using our checklist never obligates you to use our facilitation team.</p>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <select id="docRoleToggle" class="custom-select font-mono text-sm" style="min-width: 150px;">
+              <option value="buying">I am Buying</option>
+              <option value="selling">I am Selling</option>
+            </select>
+            <select id="docMaterialToggle" class="custom-select font-mono text-sm" style="min-width: 240px;">
+              <option value="spent-h2so4">Spent Sulfuric Acid (Haz)</option>
+              <option value="phosphogypsum">Phosphogypsum (Haz)</option>
+              <option value="fly-ash">Fly Ash Class-F (Non-Haz)</option>
+              <option value="toluene">Spent Toluene (Haz Solvent)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="checklist-container glass-card" style="padding: 0;" id="dynamicChecklistContainer">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Stay Independent -->
+  <section class="section independence-section" id="independence" style="padding-top: 4rem; padding-bottom: 3rem; background: radial-gradient(circle at center, rgba(46, 213, 115, 0.03) 0%, transparent 70%);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 class="section-title">HOW WE STAY INDEPENDENT</h2>
+        <p class="section-lead font-mono text-sm text-silver" style="max-width: 650px; margin: 0 auto; line-height: 1.6;">
+          We preemptively eliminate conflict of interest by strictly firewalling our core verification reporting from our facilitation services.
+        </p>
+      </div>
+
+      <div class="independence-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto;">
+        <!-- Left: Verification Arm -->
+        <div class="glass-card" style="padding: 2.5rem; border: 1px solid rgba(46, 213, 115, 0.3); background: rgba(46, 213, 115, 0.02);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <i data-lucide="microscope" class="text-acid icon-md"></i>
+            <h3 class="font-syne text-2xl text-white">Verification Arm</h3>
+          </div>
+          <p class="text-silver mb-6" style="line-height: 1.6; font-size: 0.95rem;">
+            This division's sole mandate is to deliver a factual, objective report confirming whether the physical material matches the declared specification and regulatory filings.
+          </p>
+          <ul class="font-mono text-sm text-silver" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;"><i data-lucide="check" class="text-acid icon-xs" style="margin-top: 2px;"></i> Zero financial stake in the trade outcome.</li>
+            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;"><i data-lucide="check" class="text-acid icon-xs" style="margin-top: 2px;"></i> No incentives to uncover false negatives.</li>
+            <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><i data-lucide="check" class="text-acid icon-xs" style="margin-top: 2px;"></i> Absolutely no upselling of remediation services.</li>
+          </ul>
+        </div>
+
+        <!-- Right: Facilitation Arm -->
+        <div class="glass-card" style="padding: 2.5rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <i data-lucide="briefcase" class="text-muted icon-md"></i>
+            <h3 class="font-syne text-2xl text-white">Facilitation Arm</h3>
+          </div>
+          <p class="text-silver mb-6" style="line-height: 1.6; font-size: 0.95rem;">
+            A separate, explicitly-labeled, opt-in service desk available to help facilities secure missing documentation, file renewals, or generate legal manifests.
+          </p>
+          <ul class="font-mono text-sm text-silver" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;"><i data-lucide="arrow-right" class="text-muted icon-xs" style="margin-top: 2px;"></i> 100% optional for any client.</li>
+            <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;"><i data-lucide="arrow-right" class="text-muted icon-xs" style="margin-top: 2px;"></i> Available regardless of verification results.</li>
+            <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><i data-lucide="arrow-right" class="text-muted icon-xs" style="margin-top: 2px;"></i> Using verification never obligates using facilitation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industrial Facility Onboarding Form -->
+  <section class="section onboarding-section" id="onboarding">
+    <div class="container">
+      <div class="onboarding-box glass-card border-acid-glow">
+        <div class="onboard-header text-center">
+          <div class="section-tag font-mono text-acid">[ INITIATE STREAM AUDIT ]</div>
+          <h2 class="section-title">INTEGRATE YOUR GIDC FACILITY</h2>
+          <p class="section-lead max-w-xl mx-auto">
+            Whether generating surplus by-products or seeking reliable discounted secondary feedstocks, our AI engine runs compatibility indexing within 48 hours.
+          </p>
+        </div>
+
+        <form class="onboard-form" id="onboardingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="companyName">Enterprise / Plant Legal Name</label>
+              <input type="text" id="companyName" class="custom-input" placeholder="e.g. Aarti Industries / Meghmani Organics" required />
+            </div>
+            <div class="form-group">
+              <label for="facilityCluster">GIDC/MIDC Cluster Location</label>
+              <select id="facilityCluster" class="custom-select" required>
+                <option value="">Select Cluster Zone</option>
+                <option value="ankleshwar">Ankleshwar GIDC</option>
+                <option value="dahej">Dahej PCPIR SEZ</option>
+                <option value="vapi">Vapi Industrial Estate</option>
+                <option value="vatva">Vatva / Naroda (Ahmedabad)</option>
+                <option value="jhagadia">Jhagadia Industrial Estate</option>
+                <option value="nandesari">Nandesari Chemical Complex</option>
+                <option value="panoli">Panoli GIDC</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="plantRole">Role in This Transaction</label>
+              <select id="plantRole" class="custom-select" required>
+                <option value="buyer">Buyer Requesting Verification</option>
+                <option value="seller">Seller Being Verified</option>
+              </select>
+              <div id="sellerNotice" class="font-mono text-acid text-xs mt-2" style="display: none; border-left: 2px solid var(--text-acid); padding-left: 8px;">
+                Your buyer has requested this — you'll be asked to share your filed CTO/CTE and consent documents.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="streamDesc">Material Type Under Review</label>
+              <input type="text" id="streamDesc" class="custom-input" placeholder="e.g. Spent Sulfuric Acid" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="transactVolume">Transaction Volume (MT)</label>
+              <input type="number" id="transactVolume" class="custom-input" placeholder="1200" required />
+            </div>
+            <div class="form-group">
+              <label for="urgencyType">Urgency</label>
+              <select id="urgencyType" class="custom-select" required>
+                <option value="standard">Standard Document Check (24-48h)</option>
+                <option value="expedited">Expedited Physical Assay Requested (Live Dispatch)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactEmail">Corporate Email</label>
+              <input type="email" id="contactEmail" class="custom-input" placeholder="plant-head@enterprise.com" required />
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Direct Contact Number</label>
+              <input type="tel" id="contactPhone" class="custom-input" placeholder="+91 98765 43210" required />
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <div class="checkbox-row" style="margin-bottom: 1rem;">
+              <input type="checkbox" id="gpcbConsent" required checked />
+              <label for="gpcbConsent" class="font-mono text-xs text-muted">
+                I authorize Touchstone to cross-reference our filed regulatory documents with GPCB XGN guidelines.
+              </label>
+            </div>
+
+            <!-- Verification Cost Display (Calculates dynamically) -->
+            <div id="dynamicCostDisplay" style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(214, 223, 36, 0.05); border: 1px dashed rgba(214, 223, 36, 0.3); border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span class="font-mono text-xs text-muted" style="display: block;">ESTIMATED VERIFICATION FEE</span>
+                <span class="font-mono text-lg text-acid" id="formCalculatedCost">₹ 0</span>
+              </div>
+              <div class="font-mono text-xs text-silver" id="formVolumeLabel">0 MT</div>
+            </div>
+
+            <button type="submit" class="btn btn-acid btn-lg btn-magnetic w-full" id="submitFormBtn">
+              <span>Initiate Verification Process</span>
+              <i data-lucide="shield-check" class="icon-md"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Toast Notification -->
+        <div class="success-banner" id="formSuccessMessage">
+          <i data-lucide="check-circle" class="icon-md text-acid"></i>
+          <div>
+            <strong>CASE LOGGED & ASSIGNED</strong>
+            <p class="font-mono text-xs mt-1">1. Document cross-check begins within 24 hours &rarr; 2. Physical assay dispatched if flagged &rarr; 3. Certified report delivered to dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protocol Modal for Verification Report -->
+  <div class="modal-backdrop" id="matchModal">
+    <div class="modal-window glass-card" style="max-width: 650px;">
+      <div class="modal-header">
+        <div class="modal-badge font-mono text-acid">VERIFICATION DOSSIER</div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <h3 id="modalStreamTitle" class="modal-stream-name">Verification Report</h3>
+        <div class="modal-cluster-tag font-mono" id="modalStreamOrigin">GIDC CHEMICAL CLUSTER</div>
+
+        <div class="spec-comparison-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+          <div class="spec-col" style="padding: 1rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;">
+            <div class="font-mono text-xs text-silver mb-2">DECLARED SPEC (SELLER)</div>
+            <div class="font-mono text-lg text-white" id="modalDeclaredSpec">74.5%</div>
+            <div class="font-mono text-xs text-muted mt-1">Stated Concentration</div>
+          </div>
+          <div class="spec-col" style="padding: 1rem; border: 1px solid rgba(255,71,87,0.3); border-radius: 4px; background: rgba(255,71,87,0.05);" id="modalFiledSpecBox">
+            <div class="font-mono text-xs text-silver mb-2">FILED REGULATORY PROFILE</div>
+            <div class="font-mono text-lg text-danger" id="modalFiledSpec">60.0% - 68.0%</div>
+            <div class="font-mono text-xs text-danger mt-1"><i data-lucide="alert-triangle" class="icon-xs inline-icon"></i> Mismatched Range</div>
+          </div>
+        </div>
+
+        <div class="modal-score-wrap" style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 4px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
+          <div class="output-header" style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: baseline;">
+            <div class="output-title font-mono text-silver">VERIFICATION CONFIDENCE SCORE</div>
+            <div class="composite-score-wrap">
+              <span class="composite-score text-danger font-mono" style="font-size: 1.5rem;" id="modalConfScore">42</span>
+              <span class="score-den font-mono text-danger">%</span>
+            </div>
+          </div>
+          <div class="compatibility-meter-bar" style="height: 6px; margin-bottom: 1rem; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; position: relative;">
+            <div class="meter-fill" id="modalMeterFill" style="width: 42%; height: 100%; background: var(--text-danger); position: absolute; left: 0; top: 0;"></div>
+          </div>
+          <div class="proj-label font-mono text-xs text-silver mb-1">AI REASONING TRACE</div>
+          <div class="proj-val text-danger font-mono" id="modalReasoningTrace" style="font-size: 0.85rem; line-height: 1.4;">Confidence Score: 42% (Flagged). Primary driver: declared concentration (74.5%) falls outside historical output range (60-68%) — physical assay recommended.</div>
+        </div>
+
+        <div class="assay-badge-wrap" id="modalAssayBadge" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; padding: 0.75rem; border: 1px solid rgba(214,223,36,0.3); border-radius: 4px; background: rgba(214,223,36,0.05);">
+          <i data-lucide="microscope" class="text-acid icon-sm"></i>
+          <div>
+            <div class="font-mono text-acid text-sm">PHYSICAL ASSAY CONFIRMED</div>
+            <div class="font-mono text-xs text-silver">NABL Ref: TS-774-GUJ | Date: <span id="modalAssayDate">2026-09-24</span></div>
+          </div>
+        </div>
+
+        <div class="modal-action-box">
+          <button class="btn btn-acid w-full btn-magnetic" id="downloadSpecBtn">
+            <span>Download Verification Certificate (PDF)</span>
+            <i data-lucide="download" class="icon-sm"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-symbol">
+              <span class="symbol-ring"></span>
+              <span class="symbol-core"></span>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">TOUCH<span class="text-acid">STONE</span></span>
+              <span class="brand-tag">INDUSTRIAL VERIFICATION & TRACEABILITY ENGINE</span>
+            </div>
+          </div>
+          <p class="footer-mission">
+            Autonomous material intelligence & verification platform orchestrating high-volume industrial circularity across the petrochemical, pharmaceutical, and metallurgical corridors of Gujarat.
+          </p>
+          <div class="footer-server-time font-mono text-xs">
+            <span class="live-dot pulse"></span>
+            GIDC TELEMETRY SERVER: <span id="liveTimestamp" class="text-acid">2026-09-26 13:10:00 IST</span>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h5 class="footer-col-title font-mono text-acid">GIDC CORRIDORS</h5>
+          <ul class="footer-links-list font-mono">
+            <li><a href="#network">Ankleshwar Heavy Chemical</a></li>
+            <li><a href="#network">Dahej Petroleum PCPIR</a></li>
+            <li><a href="#network">Vapi Formulation Estate</a></li>
+            <li><a href="#network">Vatva & Naroda Zone</a></li>
+            <li><a href="#network">Jhagadia Industrial Belt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h5 class="footer-col-title font-mono text-acid">REGULATORY FRAMEWORK</h5>
+          <ul class="footer-links-list font-mono">
+            <li><a href="#compliance">Hazardous Waste Rule-9</a></li>
+            <li><a href="#compliance">GPCB XGN Portal Sync</a></li>
+            <li><a href="#compliance">NABL Testing Protocols</a></li>
+            <li><a href="#compliance">PESO Tanker Geofencing</a></li>
+            <li><a href="#compliance">Scope-3 GHG Accounting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h5 class="footer-col-title font-mono text-acid">TECHNOLOGY</h5>
+          <ul class="footer-links-list font-mono">
+            <li><a href="#engine">7-Factor Vector Matching</a></li>
+            <li><a href="#simulator">Dynamic Thermochemical Engine</a></li>
+            <li><a href="#streams">N:N Bilateral Settlement</a></li>
+            <li><a href="#problem">Kalundborg Industrial Model</a></li>
+            <li><a href="#onboarding">API Integration Gateway</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright font-mono text-xs">
+          &copy; 2026 TOUCHSTONE INTELLIGENCE SYSTEMS. ALL INDUSTRIAL TRADEMARKS PROTECTED UNDER INDIAN PATENT OFFICE (IPO) COGNIZANCE.
+        </div>
+        <div class="footer-status font-mono text-xs">
+          <span class="text-acid">TOUCHSTONE 404 DEV</span> • SYSTEM STATUS: 100% OPERATIONAL
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth Modal -->
+  <div class="modal-backdrop" id="authModal">
+    <div class="modal-window glass-card" style="max-width: 450px; overflow: hidden; position: relative;">
+      <div class="modal-header">
+        <div class="modal-badge font-mono text-acid">FACILITY PORTAL</div>
+        <button class="modal-close" id="authCloseBtn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body" id="authModalBody">
+        <div class="auth-tabs font-mono" role="tablist" style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+          <button class="auth-tab-btn" id="tabBtnLogin" data-tab="login" style="background: none; border: none; color: var(--text-acid); font-weight: bold; cursor: pointer; padding: 0;">Log In</button>
+          <button class="auth-tab-btn" id="tabBtnSignup" data-tab="signup" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 0;">New Company</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form-pane" style="display: block;">
+          <div class="form-group mb-5">
+            <label for="loginEmail" style="display: block; margin-bottom: 0.5rem; font-family: 'Space Mono'; font-size: 0.8rem; color: #aaa;">Corporate Email</label>
+            <input type="email" id="loginEmail" class="custom-input font-mono" placeholder="plant-head@enterprise.com" required style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;" />
+          </div>
+          <button type="submit" class="btn btn-acid w-full btn-magnetic">
+            <span>Access Dashboard</span>
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="auth-form-pane" style="display: none;">
+          <div class="form-group mb-3">
+            <label for="regCompanyName" style="display: block; margin-bottom: 0.3rem; font-family: 'Space Mono'; font-size: 0.8rem; color: #aaa;">Company Name</label>
+            <input type="text" id="regCompanyName" class="custom-input font-mono" placeholder="e.g. Aarti Industries" required style="width: 100%; padding: 0.6rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;" />
+          </div>
+          <div class="form-group mb-3">
+            <label for="regCluster" style="display: block; margin-bottom: 0.3rem; font-family: 'Space Mono'; font-size: 0.8rem; color: #aaa;">GIDC/MIDC Cluster</label>
+            <select id="regCluster" class="custom-select font-mono" required style="width: 100%; padding: 0.6rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+              <option value="">Select Cluster</option>
+              <option value="Ankleshwar">Ankleshwar</option>
+              <option value="Dahej">Dahej</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Vatva">Vatva</option>
+            </select>
+          </div>
+          <div class="form-group mb-3">
+            <label for="regRole" style="display: block; margin-bottom: 0.3rem; font-family: 'Space Mono'; font-size: 0.8rem; color: #aaa;">Role</label>
+            <select id="regRole" class="custom-select font-mono" required style="width: 100%; padding: 0.6rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;">
+              <option value="Buyer">Buyer</option>
+              <option value="Seller">Seller</option>
+              <option value="Both">Both</option>
+            </select>
+          </div>
+          <div class="form-group mb-5">
+            <label for="regEmail" style="display: block; margin-bottom: 0.3rem; font-family: 'Space Mono'; font-size: 0.8rem; color: #aaa;">Corporate Email</label>
+            <input type="email" id="regEmail" class="custom-input font-mono" placeholder="admin@enterprise.com" required style="width: 100%; padding: 0.6rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px;" />
+          </div>
+          <button type="submit" class="btn btn-acid w-full btn-magnetic">
+            <span>Register & Verify</span>
+            <i data-lucide="shield-check" class="icon-sm"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Loading State -->
+      <div id="authLoadingState" style="display: none; padding: 3rem 0; text-align: center;">
+        <i data-lucide="loader-2" class="icon-lg text-acid animate-spin mb-4" style="margin: 0 auto; display: block;"></i>
+        <div class="font-mono text-silver">Checking registry…</div>
+      </div>
+
+      <!-- Result State -->
+      <div id="authResultState" style="display: none; padding: 2rem 0; text-align: center;">
+        <div id="authResultBadge" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; border-radius: 4px; font-family: 'Space Mono'; font-weight: bold; margin-bottom: 1.5rem; font-size: 0.9rem;">
+          <!-- JS will inject badge here -->
+        </div>
+        <div class="font-mono text-xs text-muted mb-2"><i data-lucide="lock" class="icon-xs inline-icon"></i> Authenticated. Launching portal...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Overlay -->
+  <div class="dashboard-overlay" id="dashboardOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-carbon); z-index: 9999; overflow-y: auto;">
+    
+    <header class="dash-header" style="padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.5);">
+      <div class="brand-minimal">
+        <span class="brand-text-minimal">TOUCH<span class="text-acid">STONE</span></span>
+        <span class="font-mono text-xs text-muted ml-4" style="margin-left: 1rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1rem;">CLIENT PORTAL</span>
+      </div>
+      <div>
+        <button id="dashLogoutBtn" class="btn btn-glass btn-sm font-mono"><i data-lucide="log-out" class="icon-xs inline-icon"></i> Exit Dashboard</button>
+      </div>
+    </header>
+
+    <div class="container" style="max-width: 1000px; padding-top: 4rem; padding-bottom: 4rem;">
+      <h1 class="font-syne text-3xl mb-2">Welcome back, <span class="text-acid" id="dashUserCompany">Facility Administrator</span></h1>
+      <p class="font-mono text-sm text-silver mb-10"><span id="dashUserCluster">Gujarat</span> Cluster • Verified Registry Status</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+        <!-- Left: Active Verification Requests -->
+        <div>
+          <h3 class="font-syne text-lg mb-4 text-white" style="text-transform: uppercase;">Active Verification Requests</h3>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            
+            <div class="glass-card" style="padding: 1.25rem; border: 1px solid rgba(255,255,255,0.05);">
+              <div class="font-mono text-xs text-muted mb-2">REQ-8832-ANK</div>
+              <h4 class="text-silver mb-4">Spent Sulfuric Acid (72%)</h4>
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono'; font-size: 0.75rem; font-weight: bold; background: rgba(255, 165, 2, 0.1); color: #ffa502;">
+                <i data-lucide="clock" class="icon-xs"></i> Document Check in Progress
+              </div>
+            </div>
+
+            <div class="glass-card" style="padding: 1.25rem; border: 1px solid rgba(255,255,255,0.05);">
+              <div class="font-mono text-xs text-muted mb-2">REQ-8831-ANK</div>
+              <h4 class="text-silver mb-4">Spent Caustic Flakes</h4>
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono'; font-size: 0.75rem; font-weight: bold; background: rgba(46, 213, 115, 0.1); color: #2ed573;">
+                <i data-lucide="microscope" class="icon-xs"></i> Physical Assay Scheduled
+              </div>
+            </div>
+
+            <div class="glass-card" style="padding: 1.25rem; border: 1px solid rgba(255,255,255,0.05);">
+              <div class="font-mono text-xs text-muted mb-2">REQ-8810-ANK</div>
+              <h4 class="text-silver mb-4">Phosphogypsum Load</h4>
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: 'Space Mono'; font-size: 0.75rem; font-weight: bold; background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">
+                <i data-lucide="file-check" class="icon-xs"></i> Report Ready
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Your Document Vault -->
+        <div>
+          <h3 class="font-syne text-lg mb-4 text-white" style="text-transform: uppercase;">Your Document Vault</h3>
+          <p class="font-mono text-xs text-muted mb-5">Live sync with GPCB XGN</p>
+          
+          <div class="glass-card" style="padding: 0; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span class="font-mono text-sm text-silver">Consent to Operate (CTO)</span>
+              <span style="font-family: 'Space Mono'; font-size: 0.75rem; color: #2ed573; background: rgba(46, 213, 115, 0.1); padding: 3px 8px; border-radius: 4px; font-weight: bold;"><i data-lucide="check" class="icon-xs inline-icon"></i> Verified</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span class="font-mono text-sm text-silver">Form 10 Manifest Log</span>
+              <span style="font-family: 'Space Mono'; font-size: 0.75rem; color: #2ed573; background: rgba(46, 213, 115, 0.1); padding: 3px 8px; border-radius: 4px; font-weight: bold;"><i data-lucide="check" class="icon-xs inline-icon"></i> Verified</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span class="font-mono text-sm text-silver">Rule 9 Authorization</span>
+              <span style="font-family: 'Space Mono'; font-size: 0.75rem; color: #ffa502; background: rgba(255, 165, 2, 0.1); padding: 3px 8px; border-radius: 4px; font-weight: bold;"><i data-lucide="alert-triangle" class="icon-xs inline-icon"></i> Expiring Soon</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem;">
+              <span class="font-mono text-sm text-silver">Form 9 TREM Card</span>
+              <span style="font-family: 'Space Mono'; font-size: 0.75rem; color: #ff4757; background: rgba(255, 71, 87, 0.1); padding: 3px 8px; border-radius: 4px; font-weight: bold;"><i data-lucide="x" class="icon-xs inline-icon"></i> Missing</span>
+            </div>
+          </div>
+          <button class="btn btn-glass btn-sm w-full mt-6 font-mono"><i data-lucide="briefcase" class="icon-xs inline-icon text-muted"></i> Request Document Facilitation</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
